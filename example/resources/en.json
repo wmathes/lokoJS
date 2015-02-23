@@ -1,0 +1,25 @@
+﻿{
+	"hello": "Hello world!",
+	"helloObservable": "Hello observable world...",
+	"helloObservableTwo": "...it's great to see you!",
+	"greeting": "Welcome %NAME%!",
+	"inlineHtml": "Inline Html <b>wird auch</b> <span style='color: green;'>unterstützt</span>!",
+	"englishOnly": "This text is only available in english...",
+	"button": "This button is localized!",
+	"tooltip": {
+		"default": "And so is it's tooltip! O_O"
+	},
+
+	"resource.candies": "candy",
+	"stash" : "There are <b>%AMOUNT% boxes of %RESOURCE%</b> in your stash!",
+
+	"nothingToEat": {
+		"default": "Your supplies have run out...",
+		"randomizeDefault": true,
+		"variants": {
+			"1": "There's nothing left to eat...",
+			"2": "Your pantry is empty...",
+			"3": "You need to find something edible first..."
+		}
+	}
+}

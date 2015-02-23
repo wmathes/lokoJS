@@ -1,0 +1,22 @@
+﻿{
+	"hello": "Hallo Welt!",
+	"greeting": "Willkommen %NAME%!",
+	"inlineHtml": "Inline Html <b>is supported</b> <span style='color: green;'>too</span>",
+	"tooltip": "Dies ist ein lokalisierter Tooltip.",
+
+	"button": "Dieser Button wird lokalisiert!",
+
+	"resource.candies": "Bonbons",
+	"stash" : "Du hast <b>%AMOUNT% Schachteln %RESOURCE%</b> in deinem Lager!",
+
+    "nothingToEat": {
+        "default": "Deine Vorräte sind verbraucht...",
+        "randomizeDefault": true,
+        "variants": {
+            "1": "Es gibt nichts mehr zu Essen...",
+            "2": "Deine Speisekammer ist leer...",
+            "3": "Du hast keine Versorgungsgüter mehr...",
+            "4": "Du musst erst neue Vorräte finden..."
+        }
+    }
+}

@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>LokoJS - Example</title>
+	<link rel="stylesheet" href="app.css" type="text/css" />
+
+	<!-- 3rd party libs -->
+	<script src="libs/jquery.js" type="text/javascript"></script>
+	<script src="libs/knockout.js" type="text/javascript"></script>
+
+	<!-- Loko & LokoBindings -->
+	<script src="../src/loko.js" type="text/javascript"></script>
+	<script src="../src/loko-bindings.js" type="text/javascript"></script>
+
+	<!-- Example app -->
+	<script src="app.js" type="text/javascript"></script>
+
+	
+</head>
+<body>
+	<script type="text/html" id="main-template">
+
+		<h2>LokoJS &amp; LokoJSBindings - Examples</h2>
+
+		<h4>Available Localizations</h4>
+		<ul data-bind="foreach: loko.availableLocales">
+			<li>
+				<div style="display: inline-block; width: 40px;" data-bind="text: $data"></div>
+				<!-- ko if: $parent.loko.currentLocale() != $data -->
+				<button data-bind="click: function() { $parent.loko.currentLocale($data) }, enabled: ">activate</button>
+				<!-- /ko -->
+				<!-- ko if: $parent.loko.fallbackLocale == $data -->
+				<span>(fallback locale)</span>
+				<!-- /ko -->
+			</li>
+		</ul>
+
+		<h4>Current Locale</h4>
+		<p data-bind="text: loko.currentLocale"></p>
+
+		<h4>Text</h4>
+		<p>Localized static text: <span data-bind="loctext: 'hello'"></span></p>
+		<p>Fallback Language: <span data-bind="loctext: 'englishOnly'"></span></p>
+
+		<h2>fixedLanguage</h2>
+		<p>english: <span data-bind="loctext: { key: 'hello', locale: 'en-GB' }"></span></p>
+		<p>german: <span data-bind="loctext: { key: 'hello', locale: 'de' }"></span></p>
+
+		<h2>advanced</h2>
+		<p>
+			Inline HtmL: <span data-bind="lochtml: 'inlineHtml'"></span>
+		</p>
+		<p>
+			Attribute localisation: <button data-bind="loctext: 'button', locattr: { title: 'tooltip' }"></button> (tooltip is localized as well)
+		</p>
+		<p>
+			Inner Parameter replacement: <span data-bind="lochtml: { key: 'stash', params: { 'resource': 'resource.candies', amount: 17 } }"></span>
+		</p>
+		<p>
+			Random variant: <span data-bind="loctext: 'nothingToEat'"></span>
+		</p>
+	</script>
+	<div data-bind="template: 'main-template'"></div>
+</body>
+</html>
