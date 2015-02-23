@@ -38,9 +38,9 @@ Custom resources need to implement the very simple LokoProvider-interface (see l
 A set of useful functions mostly providing validation services for lokoEngine, but may be accessed for other purposes as well.
 
 # LokoJSBindings
-LokoJSBindings is a collection of a number of custom knockoutJS Binding Handlers, which offer easy access to your lokoEngine.
+LokoJSBindings is a collection of custom knockoutJS Binding Handlers, which offer easy access to your lokoEngine.
 
-The Bindings have to be initialized with a lokoEngine first and then registered.
+The Bindings have to be initialized with a lokoEngine first and then be registered.
 
 ```javascript
 // Set Up LokoBindings
@@ -69,6 +69,10 @@ Complex parameters
 
 ## locattr-Binding
 locattr is a binding which allows the parallel localisation of various attributes of an element. Using this you can for example localize the value- and title-attributes of a button to have it display a different text AND a different tooltip for each language. This may also be used to localize style-settings e.g. for image-paths or the href-tag to customize links.
+
+```html
+<button data-bind="locattr: { title: { key: 'buttonTooltip' }}, loctext: 'buttonText'"></p>
+```
 
 ## locdate-Binding
 Not yet implemented. This Binding will localize Dates.
