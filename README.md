@@ -16,6 +16,14 @@ LokoJS is split into two components: Core and Bindings. The core consists of lok
 ## lokoEngine
 The lokoEngine is the central access point of LokoJS. Using it's resource provider it will fetch and cache lokoResources and offer easy access to localized strings, the localisation values and various comfort and status functions. It will also make sure no invalid data gets through and help you clean up your app using it's Debug and Strict-modes.
 
+Instantly get a translated string for a key
+```javascript
+var lokoEngine = new LokoJS.lokoEngine(settings);
+lokoEngine.readyPromise.done(function() {
+	alert(lokoEngine.get('helloWorld'));
+})
+```
+
 ## lokoResource
 A very basic resource class, which can be extended for more advanced use-cases. In most situation it should suffice however. Normally these get instantiated by a lokoProvider. 
 
