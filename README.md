@@ -42,8 +42,22 @@ LokoJSBindings.initialize(lokoEngine);
 LokoJSBindings.register();
 ```
 
+You can use observables for every parameter supplied to the bindings, which will result in immediate propagation when changes occur. 
+
 ## loctext- & lochtml-Binding
 loctext localizes the innerHTML of an element, while lochtml localizes the content allowing the use of html within your localisation strings. Internally thes will convert your parameters into an computedObservable<string> and pass it on to a standard knockout text-/html-binding.
+
+Flat Parameters
+```html
+<p data-bind="loctext: 'hello'"></p>
+<p data-bind="lochtml: someVar"></p>
+```
+
+Complex parameters
+```html
+<p data-bind="loctext: { key: 'greeting', locale: 'de' }"></p>
+<p data-bind="lochtml: { key: 'greeting', variant: 'female' }"></p>
+```
 
 ## locattr-Binding
 locattr is a binding which allows the parallel localisation of various attributes of an element. Using this you can for example localize the value- and title-attributes of a button to have it display a different text AND a different tooltip for each language. This may also be used to localize style-settings e.g. for image-paths or the href-tag to customize links.
